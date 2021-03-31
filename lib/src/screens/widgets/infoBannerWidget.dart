@@ -7,30 +7,31 @@ class InfoBannerWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         color: Colors.orange,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Text('Title'),
                 Row(
                   children: [
-                    Text('Author'),
+                    Text('author'),
                     CircleAvatar(
                       backgroundColor: Colors.deepPurple,
-                    )
+                    ),
                   ],
                 ),
-                Text('Views')
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Text('Comments'),
                 Text('Date'),
-                Text('Comments')
+                Text('Views'),
               ],
-            ),
+            )
           ],
         ),
       ),
