@@ -53,7 +53,7 @@ class _ImageSlideWidgetState extends State<ImageSlideWidget>
               onPressed: () {
                 debugPrint('right arrow pressed');
               },
-              color: Colors.white,
+              color: Colors.red,
               iconSize: arrowAnimation.value,
             ),
             animation: arrowAnimation,
@@ -73,7 +73,7 @@ class _ImageSlideWidgetState extends State<ImageSlideWidget>
                 debugPrint('left arrow pressed');
               },
               icon: Icon(Icons.keyboard_arrow_left),
-              color: Colors.white,
+              color: Colors.red,
               iconSize: arrowAnimation.value,
             ),
             animation: arrowAnimation,

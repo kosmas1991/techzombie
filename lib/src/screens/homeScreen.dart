@@ -5,7 +5,6 @@ import 'widgets/infoBannerWidget.dart';
 import 'widgets/contentTextWidget.dart';
 
 class HomeScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -20,16 +19,46 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
             backgroundColor: Colors.black,
             title: Center(
-              child: Image.asset('assets/techzombie_logo.jpg', height: 50, fit: BoxFit.contain,),
+              child: Image.asset(
+                'assets/techzombie_logo.jpg',
+                height: 50,
+                fit: BoxFit.contain,
+              ),
             )),
         body: Container(
           child: Column(
             children: [
-              Flexible(fit: FlexFit.tight,flex: 27,child: Container(color: Colors.black,child: ImageSlideWidget(),)),
-              Flexible(fit: FlexFit.tight,flex: 13,child: Container(color: Colors.black26,child: InfoBannerWidget(),)),
-              Flexible(fit: FlexFit.tight,flex: 60,child: Container(color: Colors.redAccent,child: ContentTextWidget(),))
+              Flexible(
+                  fit: FlexFit.tight,
+                  flex: 27,
+                  child: Container(
+                    color: Colors.black,
+                    child: ImageSlideWidget(),
+                  )),
+              Flexible(
+                  fit: FlexFit.tight,
+                  flex: 13,
+                  child: Container(
+                    color: Colors.black,
+                    child: InfoBannerWidget(),
+                  )),
+              Flexible(
+                  fit: FlexFit.tight,
+                  flex: 60,
+                  child: Container(
+                    color: Colors.black,
+                    child: ContentTextWidget(),
+                  ))
             ],
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(
+            Icons.navigate_next,
+            color: Colors.black,
+          ),
+          backgroundColor: Colors.red,
+          onPressed: () {},
         ),
       ),
     );

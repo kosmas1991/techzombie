@@ -6,7 +6,7 @@ class ContentTextWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        color: Colors.green,
+        color: Colors.black,
         child: Text(
           'Content text here Content text here Content text here Content text here Content text here Content text here Content text here Content text here Content text here Content text here ',
           textAlign: TextAlign.center,

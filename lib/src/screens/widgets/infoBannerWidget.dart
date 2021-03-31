@@ -6,17 +6,17 @@ class InfoBannerWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        color: Colors.orange,
+        color: Colors.black,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Title', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+                Text('Title', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),),
                 Row(
                   children: [
-                    Text('Author', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+                    Text('Author', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),),
                     CircleAvatar(
                       backgroundColor: Colors.deepPurple,
                     ),
@@ -27,9 +27,9 @@ class InfoBannerWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Comments', style: TextStyle(color: Colors.white),),
-                Text('Date', style: TextStyle(color: Colors.white),),
-                Text('Views', style: TextStyle(color: Colors.white),),
+                Text('Comments', style: TextStyle(color: Colors.red),),
+                Text('Date', style: TextStyle(color: Colors.red),),
+                Text('Views', style: TextStyle(color: Colors.red),),
               ],
             )
           ],
