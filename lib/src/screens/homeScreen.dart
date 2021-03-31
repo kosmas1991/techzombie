@@ -25,8 +25,8 @@ class HomeScreen extends StatelessWidget {
         body: Container(
           child: Column(
             children: [
-              Flexible(fit: FlexFit.tight,flex: 25,child: Container(color: Colors.black,child: ImageSlideWidget(),)),
-              Flexible(fit: FlexFit.tight,flex: 15,child: Container(color: Colors.black26,child: InfoBannerWidget(),)),
+              Flexible(fit: FlexFit.tight,flex: 27,child: Container(color: Colors.black,child: ImageSlideWidget(),)),
+              Flexible(fit: FlexFit.tight,flex: 13,child: Container(color: Colors.black26,child: InfoBannerWidget(),)),
               Flexible(fit: FlexFit.tight,flex: 60,child: Container(color: Colors.redAccent,child: ContentTextWidget(),))
             ],
           ),

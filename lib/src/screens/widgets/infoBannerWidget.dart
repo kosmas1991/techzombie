@@ -13,10 +13,10 @@ class InfoBannerWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Title'),
+                Text('Title', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
                 Row(
                   children: [
-                    Text('author'),
+                    Text('Author', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
                     CircleAvatar(
                       backgroundColor: Colors.deepPurple,
                     ),
@@ -27,9 +27,9 @@ class InfoBannerWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Comments'),
-                Text('Date'),
-                Text('Views'),
+                Text('Comments', style: TextStyle(color: Colors.white),),
+                Text('Date', style: TextStyle(color: Colors.white),),
+                Text('Views', style: TextStyle(color: Colors.white),),
               ],
             )
           ],
