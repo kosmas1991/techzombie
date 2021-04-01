@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:techzombie/src/models/posts.dart';
 
-class ContentTextWidget extends StatelessWidget {
+class ContentTextWidget extends StatefulWidget {
+  final MyPost allPostsRef;
+  final int counter;
+
+  ContentTextWidget({this.allPostsRef, this.counter});
+
+  @override
+  _ContentTextWidgetState createState() => _ContentTextWidgetState();
+}
+
+class _ContentTextWidgetState extends State<ContentTextWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -8,7 +19,7 @@ class ContentTextWidget extends StatelessWidget {
       child: Container(
         color: Colors.black,
         child: Text(
-          'Content text here Content text here Content text here Content text here Content text here Content text here Content text here Content text here Content text here Content text here ',
+          widget.allPostsRef.posts[widget.counter].content,
           textAlign: TextAlign.center,
           style: TextStyle(color: Colors.white),
         ),

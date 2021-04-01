@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:techzombie/src/models/posts.dart';
 
 class ImageSlideWidget extends StatefulWidget {
+  final MyPost allPostsRef;
+  final int counter;
+
+  ImageSlideWidget({this.allPostsRef, this.counter});
+
   @override
   _ImageSlideWidgetState createState() => _ImageSlideWidgetState();
 }
@@ -48,14 +54,10 @@ class _ImageSlideWidgetState extends State<ImageSlideWidget>
         child: Container(
           color: Colors.black,
           child: AnimatedBuilder(
-            builder: (context, child) => IconButton(
-              icon: Icon(Icons.keyboard_arrow_right),
-              onPressed: () {
-                debugPrint('right arrow pressed');
-              },
-              color: Colors.red,
-              iconSize: arrowAnimation.value,
-            ),
+            builder: (context, child) {
+              return Icon(Icons.keyboard_arrow_right,
+                  color: Colors.red, size: arrowAnimation.value);
+            },
             animation: arrowAnimation,
           ),
         ));
@@ -68,14 +70,13 @@ class _ImageSlideWidgetState extends State<ImageSlideWidget>
         child: Container(
           color: Colors.black,
           child: AnimatedBuilder(
-            builder: (context, child) => IconButton(
-              onPressed: () {
-                debugPrint('left arrow pressed');
-              },
-              icon: Icon(Icons.keyboard_arrow_left),
-              color: Colors.red,
-              iconSize: arrowAnimation.value,
-            ),
+            builder: (context, child) {
+              return Icon(
+                Icons.keyboard_arrow_left,
+                color: Colors.red,
+                size: arrowAnimation.value,
+              );
+            },
             animation: arrowAnimation,
           ),
         ));
@@ -88,7 +89,10 @@ class _ImageSlideWidgetState extends State<ImageSlideWidget>
         child: Padding(
           padding: const EdgeInsets.only(right: 8.0, left: 8.0),
           child: Container(
-            color: Colors.grey,
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: Image.network(widget.allPostsRef.posts[widget.counter]
+                    .thumbnailImages['full'].url)),
           ),
         ));
   }
