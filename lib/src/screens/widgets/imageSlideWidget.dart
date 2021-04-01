@@ -14,7 +14,7 @@ class _ImageSlideWidgetState extends State<ImageSlideWidget>
   void initState() {
     arrowController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 500));
-    arrowAnimation = Tween(begin: 15.0, end: 20.0).animate(
+    arrowAnimation = Tween(begin: 10.0, end: 20.0).animate(
         CurvedAnimation(parent: arrowController, curve: Curves.easeInOut));
     arrowController.forward();
     arrowAnimation.addStatusListener((status) {

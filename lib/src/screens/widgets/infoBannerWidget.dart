@@ -18,7 +18,7 @@ class InfoBannerWidget extends StatelessWidget {
                   children: [
                     Text('Author', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),),
                     CircleAvatar(
-                      backgroundColor: Colors.deepPurple,
+                      backgroundImage: NetworkImage('https://el.gravatar.com/avatar/ba6ba349f322f9e75c4dd9cdeb6a0f3a#038;r=g&#038;d=monsterid'),
                     ),
                   ],
                 ),

@@ -20,12 +20,13 @@ class HomeScreen extends StatelessWidget {
             backgroundColor: Colors.black,
             title: Center(
               child: Image.asset(
-                'assets/techzombie_logo_red.jpg',
+                'assets/techzombie_logo.jpg',
                 height: 50,
                 fit: BoxFit.contain,
               ),
             )),
         body: Container(
+          color: Colors.black,
           child: Column(
             children: [
               Flexible(
