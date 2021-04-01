@@ -10,7 +10,6 @@ class HomeScreen extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: Colors.black,
         statusBarBrightness: Brightness.light,
-        //// also safeArea added at scaffold
         systemNavigationBarColor: Colors.black,
         systemNavigationBarIconBrightness: Brightness.light));
 
@@ -21,7 +20,7 @@ class HomeScreen extends StatelessWidget {
             title: Center(
               child: Image.asset(
                 'assets/techzombie_logo.jpg',
-                height: 50,
+                height: 45,
                 fit: BoxFit.contain,
               ),
             )),
