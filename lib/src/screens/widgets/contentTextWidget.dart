@@ -35,7 +35,6 @@ class _ContentTextWidgetState extends State<ContentTextWidget> {
   }
 
   String fetchVideoUrl(String postContent) {
-    String finalURL;
     List<String> lista = postContent.split(RegExp('src=\"'));
     List<String> lista2 = lista[1].split(RegExp('\\?'));
     return lista2[0];
