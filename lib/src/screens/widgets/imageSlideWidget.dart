@@ -92,7 +92,7 @@ class _ImageSlideWidgetState extends State<ImageSlideWidget>
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
                 child: Image.network(widget.allPostsRef.posts[widget.counter]
-                    .thumbnailImages['full'].url)),
+                    .thumbnailImages['full'].url,fit: BoxFit.fill,)),
           ),
         ));
   }

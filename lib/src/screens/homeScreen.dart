@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         child: Scaffold(
           appBar: AppBar(
-              backgroundColor: Colors.black,
+            backgroundColor: Colors.black,
               title: Center(
                 child: Image.asset(
                   'assets/techzombie_logo.jpg',
