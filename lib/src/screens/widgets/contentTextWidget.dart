@@ -35,10 +35,12 @@ class _ContentTextWidgetState extends State<ContentTextWidget> {
                 id: fetchVideoId(
                     widget.allPostsRef.posts[widget.counter].content),
               )
-            : Text(
-                postContent,
-                style: TextStyle(color: Colors.white),
-              ),
+            : SingleChildScrollView(
+              child: Text(
+                  postContent,
+                  style: TextStyle(color: Colors.white),
+                ),
+            ),
       ),
     );
   }
