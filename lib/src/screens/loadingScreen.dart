@@ -49,7 +49,7 @@ class _LoadingScreenState extends State<LoadingScreen> with TickerProviderStateM
                 ],
               ),
             ),
-            Text('Fetching data ...', style: TextStyle(color: Colors.white),)
+            Text('Λήψη δεδομένων ...', style: TextStyle(color: Colors.white),)
           ],
         ),
       ),

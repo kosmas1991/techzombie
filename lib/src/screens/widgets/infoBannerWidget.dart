@@ -24,7 +24,7 @@ class _InfoBannerWidgetState extends State<InfoBannerWidget> {
               children: [
                 Row(
                   children: [
-                    Text('Title', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+                    Text('Τίτλος', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
                     Container(width: MediaQuery.of(context).size.width*0.6,child: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(widget.allPostsRef.posts[widget.counter].title, maxLines: 3,style: TextStyle(color: Colors.red),),
@@ -33,7 +33,7 @@ class _InfoBannerWidgetState extends State<InfoBannerWidget> {
                 ),
                 Row(
                   children: [
-                    Text('Author', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+                    Text('Από', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: CircleAvatar(
@@ -50,7 +50,7 @@ class _InfoBannerWidgetState extends State<InfoBannerWidget> {
               children: [
                 Row(
                   children: [
-                    Text('Comments', style: TextStyle(color: Colors.white),),
+                    Text('Σχόλια', style: TextStyle(color: Colors.white),),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(widget.allPostsRef.posts[widget.counter].commentCount.toString(),style: TextStyle(color: Colors.red),),
@@ -66,7 +66,7 @@ class _InfoBannerWidgetState extends State<InfoBannerWidget> {
                 ),
                 Row(
                   children: [
-                    Text('Views', style: TextStyle(color: Colors.white),),
+                    Text('Προβολές', style: TextStyle(color: Colors.white),),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(widget.allPostsRef.posts[widget.counter].customFields.views.toString(),style: TextStyle(color: Colors.red),),

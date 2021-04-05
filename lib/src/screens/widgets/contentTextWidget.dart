@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:techzombie/src/models/posts.dart';
 import 'showYoutubeFrameWidget.dart';
+import 'showRegularPost.dart';
 
 class ContentTextWidget extends StatefulWidget {
   final MyPost allPostsRef;
@@ -35,12 +36,7 @@ class _ContentTextWidgetState extends State<ContentTextWidget> {
                 id: fetchVideoId(
                     widget.allPostsRef.posts[widget.counter].content),
               )
-            : SingleChildScrollView(
-              child: Text(
-                  postContent,
-                  style: TextStyle(color: Colors.white),
-                ),
-            ),
+            : ShowRegularPost(postContent: postContent,),
       ),
     );
   }
