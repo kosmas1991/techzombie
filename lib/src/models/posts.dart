@@ -87,8 +87,8 @@ class Post {
   String excerpt;
   DateTime date;
   DateTime modified;
-  List<Category> categories;
-  List<Category> tags;
+  List<MyCategory> categories;
+  List<MyCategory> tags;
   Author author;
   List<Comment> comments;
   List<Attachment> attachments;
@@ -112,8 +112,8 @@ class Post {
     excerpt: json["excerpt"],
     date: DateTime.parse(json["date"]),
     modified: DateTime.parse(json["modified"]),
-    categories: List<Category>.from(json["categories"].map((x) => Category.fromJson(x))),
-    tags: List<Category>.from(json["tags"].map((x) => Category.fromJson(x))),
+    categories: List<MyCategory>.from(json["categories"].map((x) => MyCategory.fromJson(x))),
+    tags: List<MyCategory>.from(json["tags"].map((x) => MyCategory.fromJson(x))),
     author: Author.fromJson(json["author"]),
     comments: List<Comment>.from(json["comments"].map((x) => Comment.fromJson(x))),
     attachments: List<Attachment>.from(json["attachments"].map((x) => Attachment.fromJson(x))),
@@ -300,8 +300,8 @@ final slugValues = EnumValues({
   "kosmas1991": Slug.KOSMAS1991
 });
 
-class Category {
-  Category({
+class MyCategory {
+  MyCategory({
     this.id,
     this.slug,
     this.title,
@@ -317,7 +317,7 @@ class Category {
   int parent;
   int postCount;
 
-  factory Category.fromJson(Map<String, dynamic> json) => Category(
+  factory MyCategory.fromJson(Map<String, dynamic> json) => MyCategory(
     id: json["id"],
     slug: json["slug"],
     title: json["title"],

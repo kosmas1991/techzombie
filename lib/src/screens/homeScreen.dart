@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -35,79 +36,90 @@ class _HomeScreenState extends State<HomeScreen> {
         systemNavigationBarIconBrightness: Brightness.light));
 
     return SafeArea(
-      child: _loading? LoadingScreen() : GestureDetector(
-        onHorizontalDragEnd: (details) {
-          if (details.primaryVelocity > 8) {
-            setState(() {
-              _counter--;
-              if (_counter == -1) {
-                _counter = _allPostsRef.posts.length - 1;
-              }
-            });
-          } else if (details.primaryVelocity < -8) {
-            setState(() {
-              _counter++;
-              if (_counter == _allPostsRef.posts.length) {
-                _counter = 0;
-              }
-            });
-          }
-        },
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.black,
-              title: Center(
-                child: Image.asset(
-                  'assets/techzombie_logo.jpg',
-                  height: 45,
-                  fit: BoxFit.contain,
-                ),
-              )),
-          body: Container(
-            color: Colors.black,
-            child: Column(
-              children: [
-                Flexible(
-                    fit: FlexFit.tight,
-                    flex: 27,
-                    child: Container(
-                      color: Colors.black,
-                      child: ImageSlideWidget(allPostsRef: _allPostsRef, counter: _counter,),
-                    )),
-                Flexible(
-                    fit: FlexFit.tight,
-                    flex: 13,
-                    child: Container(
-                      color: Colors.black,
-                      child: InfoBannerWidget(allPostsRef: _allPostsRef,counter: _counter,),
-                    )),
-                Flexible(
-                    fit: FlexFit.tight,
-                    flex: 60,
-                    child: Container(
-                      color: Colors.black,
-                      child: ContentTextWidget(allPostsRef: _allPostsRef, counter: _counter,),
-                    ))
-              ],
-            ),
-          ),
-          floatingActionButton: FloatingActionButton(
-            child: Icon(
-              Icons.navigate_next,
-              color: Colors.black,
-            ),
-            backgroundColor: Colors.red,
-            onPressed: () {
-              setState(() {
-                _counter++;
-                if (_counter == _allPostsRef.posts.length) {
-                  _counter = 0;
+      child: _loading
+          ? LoadingScreen()
+          : GestureDetector(
+              onHorizontalDragEnd: (details) {
+                if (details.primaryVelocity > 8) {
+                  setState(() {
+                    _counter--;
+                    if (_counter == -1) {
+                      _counter = _allPostsRef.posts.length - 1;
+                    }
+                  });
+                } else if (details.primaryVelocity < -8) {
+                  setState(() {
+                    _counter++;
+                    if (_counter == _allPostsRef.posts.length) {
+                      _counter = 0;
+                    }
+                  });
                 }
-              });
-            },
-          ),
-        ),
-      ),
+              },
+              child: Scaffold(
+                appBar: AppBar(
+                    backgroundColor: Colors.black,
+                    title: Center(
+                      child: Image.asset(
+                        'assets/techzombie_logo.jpg',
+                        height: 45,
+                        fit: BoxFit.contain,
+                      ),
+                    )),
+                body: Container(
+                  color: Colors.black,
+                  child: Column(
+                    children: [
+                      Flexible(
+                          fit: FlexFit.tight,
+                          flex: 27,
+                          child: Container(
+                            color: Colors.black,
+                            child: ImageSlideWidget(
+                              allPostsRef: _allPostsRef,
+                              counter: _counter,
+                            ),
+                          )),
+                      Flexible(
+                          fit: FlexFit.tight,
+                          flex: 13,
+                          child: Container(
+                            color: Colors.black,
+                            child: InfoBannerWidget(
+                              allPostsRef: _allPostsRef,
+                              counter: _counter,
+                            ),
+                          )),
+                      Flexible(
+                          fit: FlexFit.tight,
+                          flex: 60,
+                          child: Container(
+                            color: Colors.black,
+                            child: ContentTextWidget(
+                              allPostsRef: _allPostsRef,
+                              counter: _counter,
+                            ),
+                          )),
+                    ],
+                  ),
+                ),
+                floatingActionButton: FloatingActionButton(
+                  child: Icon(
+                    Icons.navigate_next,
+                    color: Colors.black,
+                  ),
+                  backgroundColor: Colors.red,
+                  onPressed: () {
+                    setState(() {
+                      _counter++;
+                      if (_counter == _allPostsRef.posts.length) {
+                        _counter = 0;
+                      }
+                    });
+                  },
+                ),
+              ),
+            ),
     );
   }
 }
