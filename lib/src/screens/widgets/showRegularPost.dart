@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/image_render.dart';
 import 'package:flutter_html/style.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ShowRegularPost extends StatefulWidget {
   final String postContent;
@@ -48,8 +49,18 @@ class _ShowRegularPostState extends State<ShowRegularPost> {
             networkSourceMatcher():
                 networkImageRender(altWidget: (_) => FlutterLogo()),
           },
-          onLinkTap: (url) {
+          onLinkTap: (url) async{
             print("Opening $url...");
+            if (await canLaunch(url)) {
+            await launch(
+            url,
+            forceSafariVC: false,
+            forceWebView: false,
+            headers: <String, String>{'my_header_key': 'my_header_value'},
+            );
+            } else {
+            throw 'Could not launch $url';
+            }
           },
           onImageTap: (src) {
             print(src);
